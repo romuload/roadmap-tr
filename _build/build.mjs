@@ -7,6 +7,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
 const products = JSON.parse(readFileSync(join(here, 'data.json'), 'utf8'));
 const enText = JSON.parse(readFileSync(join(here, 'en.json'), 'utf8'));
+const changes = JSON.parse(readFileSync(join(here, 'changes.json'), 'utf8'));
 const QS = ['Q1', 'Q2', 'Q3', 'Q4'];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -29,6 +30,14 @@ const find = (pid, q, part) => {
   if (!it) throw new Error(`Destaque não encontrado: ${pid} ${q} ${part}`);
   return it;
 };
+const fmtDate = (iso, locale, opts) => new Intl.DateTimeFormat(locale, { timeZone: 'UTC', ...opts }).format(new Date(`${iso}T00:00:00Z`));
+const changeEntries = changes.entries.map((c) => {
+  const it = products.find((p) => p.id === c.product).quarters[c.q].find((x) => x.title.includes(c.match));
+  if (!it) throw new Error(`Mudança sem item: ${c.product} ${c.q} ${c.match}`);
+  if (c.type === 'status' && it.status !== 'entregue') throw new Error(`Mudança de status em item não entregue: ${it.title}`);
+  return { ...c, it };
+});
+const changeById = new Map(changeEntries.map((c) => [c.it.id, c]));
 const heat = (n) => (n === 0 ? 'h0' : n < 3 ? 'h1' : n < 6 ? 'h2' : n < 9 ? 'h3' : 'h4');
 const ruler = (active) => `<div class="ruler" aria-hidden="true">${QS.map((q) => `<span style="flex:${qItems(q).length}" class="${q === active ? 'on' : ''}"></span>`).join('')}</div>`;
 
@@ -58,7 +67,19 @@ const LANGS = {
     tile: 'Reforma Tributária',
     logoBack: 'Thomson Reuters, voltar à home',
     sections: 'Seções da página',
-    navYear: 'O ano', navMap: 'Mapa', navProducts: 'Produtos',
+    navYear: 'O ano', navMap: 'Mapa', navProducts: 'Produtos', navChanges: 'O que mudou',
+    updated: (d) => `Atualizado em ${d}, conforme o roadmap atual.`,
+    changesH: 'O que mudou',
+    changesP: 'Prazos e situações alterados, com o motivo, para quem já acompanha o roadmap.',
+    changesNote: '<b>Entradas de exemplo.</b> Mostram como o recurso funciona nesta proposta conceitual e não representam mudanças reais. A situação atual de cada item vem do roadmap.',
+    example: 'Exemplo',
+    changeType: { prazo: 'Prazo alterado', status: 'Situação alterada', novo: 'Item incluído' },
+    changeBadge: (type, d) => `Exemplo: ${type.toLowerCase()} em ${d}`,
+    fromTo: (a, b) => `De <b>${a}</b> para <b>${b}</b>`,
+    added: (q) => `Incluído em <b>${q}</b>`,
+    reason: 'Motivo:',
+    searchLabel: 'Buscar no roadmap',
+    searchPh: 'Buscar item, obrigação ou produto',
     masthead: 'Os quatro trimestres de 2026',
     alts: ['Fachada de vidro e aço vista de baixo', 'Estrutura metálica circular vista de baixo contra o céu', 'Escadas rolantes em perspectiva', 'Tubos de aço empilhados com uma calculadora ao centro'],
     standfirst: 'Tudo o que muda nos produtos ONESOURCE em 2026, trimestre a trimestre.',
@@ -80,11 +101,11 @@ const LANGS = {
     tabsLabel: (n) => `Trimestres de ${n}`,
     qLabel: (q) => `${q} de 2026`,
     prodsH: 'Todos os itens, produto a produto',
-    prodsP: 'Abra um item para ver os subitens. Use os filtros para seguir um tema por todos os produtos.',
+    prodsP: 'Abra um item para ver os subitens. Use a busca e os filtros para seguir um tema por todos os produtos.',
     filters: 'Filtros', themeGroup: 'Tema', statusGroup: 'Situação',
     chipEntregue: 'Entregue', chipPrevisto: 'Previsto', chipSem: 'Sem status',
     clear: 'Limpar filtros',
-    empty: 'Nenhum item combina esse tema com essa situação.',
+    empty: 'Nenhum item encontrado. Ajuste a busca ou limpe os filtros.',
     footNote: 'O roadmap poderá ser ajustado conforme evolução regulatória e a disponibilização das APIs pelo Fisco.',
     top: 'Voltar ao topo',
     credits: 'Fotos: banco de imagens ONESOURCE. Saguão: roadmap atual.',
@@ -116,7 +137,19 @@ const LANGS = {
     tile: 'Tax Reform',
     logoBack: 'Thomson Reuters, back to home',
     sections: 'Page sections',
-    navYear: 'The year', navMap: 'Map', navProducts: 'Products',
+    navYear: 'The year', navMap: 'Map', navProducts: 'Products', navChanges: 'What changed',
+    updated: (d) => `Updated on ${d}, based on the current roadmap.`,
+    changesH: 'What changed',
+    changesP: 'Changed dates and statuses, with the reason, for people who already follow the roadmap.',
+    changesNote: '<b>Example entries.</b> They show how the feature works in this concept proposal and don’t represent real changes. The current status of each item comes from the roadmap.',
+    example: 'Example',
+    changeType: { prazo: 'Date changed', status: 'Status changed', novo: 'Item added' },
+    changeBadge: (type, d) => `Example: ${type.toLowerCase()} on ${d}`,
+    fromTo: (a, b) => `From <b>${a}</b> to <b>${b}</b>`,
+    added: (q) => `Added to <b>${q}</b>`,
+    reason: 'Reason:',
+    searchLabel: 'Search the roadmap',
+    searchPh: 'Search by item, obligation or product',
     masthead: 'The four quarters of 2026',
     alts: ['Glass and steel facade seen from below', 'Circular metal structure seen from below against the sky', 'Escalators in perspective', 'Stacked steel tubes with a calculator in the center'],
     standfirst: 'Everything that changes in ONESOURCE products in 2026, quarter by quarter.',
@@ -138,11 +171,11 @@ const LANGS = {
     tabsLabel: (n) => `Quarters for ${n}`,
     qLabel: (q) => `${q} 2026`,
     prodsH: 'All items, product by product',
-    prodsP: 'Open an item to see its sub-items. Use the filters to follow a theme across all products.',
+    prodsP: 'Open an item to see its sub-items. Use search and filters to follow a theme across all products.',
     filters: 'Filters', themeGroup: 'Theme', statusGroup: 'Status',
     chipEntregue: 'Delivered', chipPrevisto: 'Planned', chipSem: 'No status',
     clear: 'Clear filters',
-    empty: 'No item matches this theme and status.',
+    empty: 'No items found. Adjust the search or clear the filters.',
     footNote: 'The roadmap may be adjusted according to regulatory developments and the availability of APIs from the Tax Authorities.',
     top: 'Back to top',
     credits: 'Photos: ONESOURCE image library. Lobby: current roadmap. English text based on the current English roadmap, with additional items translated for this proposal.',
@@ -212,7 +245,7 @@ function render(lang) {
 <header class="rh">
   <a class="rh-logo" href="${L.home}" aria-label="${L.logoBack}"><img class="logo" src="assets/img/logo-tr.png" alt=""></a>
   <nav class="rh-tab" aria-label="${L.sections}">
-    <a href="#ano">${L.navYear}</a><a href="#mapa">${L.navMap}</a><a href="#produtos">${L.navProducts}</a>
+    <a class="nav-changes" href="#mudou">${L.navChanges}</a><a href="#ano">${L.navYear}</a><a href="#mapa">${L.navMap}</a><a href="#produtos">${L.navProducts}</a>
   </nav>
   <div class="rh-end">
     <a class="rh-back" href="${L.home}">${icon('arrow-left')}Roadmap 2026</a>
@@ -232,6 +265,7 @@ function render(lang) {
 <section class="title-row axis">
   <div class="title-side">
     <p class="standfirst">${L.standfirst}</p>
+    <p class="updated">${L.updated(`<time datetime="${changes.updated}">${fmtDate(changes.updated, L.code, { dateStyle: 'long' })}</time>`)}</p>
     <a class="btn" href="#ano">${L.seeYear} ${icon('arrow-down')}</a>
   </div>
   <h1 class="mask title"><span><span>${L.titleLines[0]}</span></span><span><span>${L.titleLines[1]}</span></span></h1>
@@ -248,6 +282,32 @@ function render(lang) {
     <p data-reveal>${L.themesLine(themeCount)}</p>
     <p data-reveal><b>${L.coverage}</b> ${products.map((p) => esc(shortName(p.name))).join(', ')}.</p>
   </div>
+</section>`;
+
+  /* ---------- Reforma: o que mudou ---------- */
+  const changeLine = (c) => {
+    const type = L.changeType[c.type];
+    const after = esc(L.statusLabel(c.it));
+    const line = c.type === 'prazo' ? `${L.fromTo(esc(c.before), c.q)}. ${after}.`
+      : c.type === 'status' ? `${L.fromTo(L.chipPrevisto, after)}.`
+      : `${L.added(c.q)}. ${after}.`;
+    return `      <li class="chg" data-reveal>
+        <p class="chg-meta"><span><time datetime="${c.date}">${fmtDate(c.date, L.code, { dateStyle: 'medium' })}</time> · ${type}</span>${c.example ? `<span class="chg-ex">${L.example}</span>` : ''}</p>
+        <a class="chg-t" href="#${c.it.id}">${t(c.it.title)}</a>
+        <p>${esc(shortName(c.it.product.name))}. ${line}</p>
+        <p>${L.reason} ${esc(c.reason[lang])}</p>
+      </li>`;
+  };
+  const changesSection = `
+<section class="changes axis" id="mudou" aria-labelledby="mudou-t">
+  <div class="changes-side">
+    <h2 id="mudou-t" data-reveal>${L.changesH}</h2>
+    <p data-reveal>${L.changesP}</p>
+    <p class="changes-note" data-reveal>${L.changesNote}</p>
+  </div>
+  <ol class="chg-list">
+${changeEntries.map(changeLine).join('\n')}
+  </ol>
 </section>`;
 
   /* ---------- Reforma: cena dos trimestres ---------- */
@@ -311,7 +371,9 @@ ${products.map((p) => `        <tr><th scope="row"><a href="#${p.id}">${esc(shor
   const itemRow = (it) => {
     const detail = it.lead || it.body.length;
     const attrs = `id="${it.id}" class="band" data-status="${it.status}" data-themes="${esc(it.themes.join('|'))}"`;
-    const headline = `<span class="band-t">${t(it.title)}</span><span class="st st-${it.status}">${esc(L.statusLabel(it))}</span>`;
+    const chg = changeById.get(it.id);
+    const badge = chg ? `<span class="band-chg">${esc(L.changeBadge(L.changeType[chg.type], fmtDate(chg.date, L.code, { month: lang === 'pt' ? '2-digit' : 'short', day: lang === 'pt' ? '2-digit' : 'numeric' })))}</span>` : '';
+    const headline = `<span class="band-t">${t(it.title)}${badge}</span><span class="st st-${it.status}">${esc(L.statusLabel(it))}</span>`;
     if (!detail) return `<div ${attrs}><div class="band-h">${headline}</div></div>`;
     return `<details ${attrs}><summary class="band-h">${headline}${icon('chevron-down', 'ic band-ic')}</summary><div class="band-d">${it.lead ? `<p>${t(it.lead)}</p>` : ''}${lines(it.body)}</div></details>`;
   };
@@ -343,6 +405,7 @@ ${p.quarters[q].map(itemRow).join('\n')}
     <p data-reveal>${L.prodsP}</p>
   </div>
   <div class="filters" aria-label="${L.filters}">
+    <div class="f-search" role="search"><label class="sr" for="busca">${L.searchLabel}</label><input id="busca" type="search" data-search placeholder="${L.searchPh}" autocomplete="off" spellcheck="false"></div>
     <div class="chips" role="group" aria-label="${L.themeGroup}">${themes.map((x) => chip('data-theme', x, themeName(x), themeCount(x))).join('')}</div>
     <div class="chips" role="group" aria-label="${L.statusGroup}">${chip('data-status', 'entregue', L.chipEntregue, count(all, 'entregue'))}${chip('data-status', 'previsto', L.chipPrevisto, count(all, 'previsto'))}${chip('data-status', 'sem', L.chipSem, count(all, 'sem'))}</div>
     <p class="f-result" role="status" aria-live="polite"><span data-result>${items(all.length)} ${lang === 'pt' ? 'em' : 'across'} ${fronts(products.length)}</span><button type="button" class="f-clear" data-clear hidden>${icon('close-x')}${L.clear}</button></p>
@@ -374,6 +437,7 @@ ${products.map(chapter).join('\n')}
 <main>
 ${hero}
 ${intro}
+${changesSection}
 ${scene}
 ${map}
 ${productsSection}

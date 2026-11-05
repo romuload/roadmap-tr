@@ -126,6 +126,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .title-row { padding-top: clamp(32px, 4.6vw, 72px); padding-bottom: clamp(64px, 7vw, 104px); }
 .title { font-size: var(--t-display); font-weight: 700; line-height: .96; letter-spacing: -.04em; color: var(--green); }
 .standfirst { font-size: var(--t-lg); line-height: 1.35; max-width: 30ch; color: var(--ink-strong); margin-bottom: 24px; }
+.updated { font-size: 14px; line-height: 1.35; max-width: 34ch; color: var(--soft); margin: -8px 0 24px; }
 .btn { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 20px; background: var(--orange); color: #fff; font-weight: 500; text-decoration: none; transition: background 160ms, transform 160ms var(--ease); }
 .btn:hover { background: #bd3800; transform: translateY(-2px); }
 .btn:active { transform: none; }
@@ -135,6 +136,22 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .lead { font-size: clamp(24px, 2.5vw, 36px); line-height: 1.2; font-weight: 400; letter-spacing: -.015em; color: var(--green); max-width: 40ch; margin-left: var(--axis); }
 .intro-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 72px; }
 .intro-cols b { font-weight: 700; color: var(--ink-strong); }
+
+/* ---------- O QUE MUDOU ---------- */
+.changes { padding-bottom: var(--gap); }
+.changes-side { padding-right: 40px; }
+.changes-side h2 { font-size: var(--t-h2); font-weight: 700; line-height: 1.02; letter-spacing: -.03em; color: var(--green); margin-bottom: 24px; }
+.changes-side > p { font-size: var(--t-lg); line-height: 1.35; max-width: 36ch; }
+.changes-side > .changes-note { font-size: var(--t-body); line-height: 1.45; margin-top: 20px; }
+.changes-note b { font-weight: 700; color: var(--ink-strong); }
+.chg-list { list-style: none; margin: 0; padding: 0; min-width: 0; }
+.chg { background: var(--g1); padding: 16px; margin-bottom: 4px; }
+.chg-meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 14px; color: var(--ink); margin-bottom: 8px; }
+.chg-ex { flex: none; background: var(--peach-2); color: #5a2400; font-weight: 500; line-height: 1.2; padding: 4px 8px; }
+.chg-t { display: block; font-size: var(--t-lg); font-weight: 500; line-height: 1.25; color: var(--ink-strong); text-underline-offset: 3px; margin-bottom: 6px; overflow-wrap: anywhere; }
+.chg-t:hover { color: #b93700; }
+.chg b { font-weight: 700; color: var(--ink-strong); }
+.band-chg { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: #5a2400; }
 
 /* ---------- CENA DOS TRIMESTRES: cada painel gruda e o seguinte cobre ---------- */
 .qp { position: sticky; top: 0; height: 100svh; min-height: 620px; display: grid; grid-template-columns: var(--axis) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; padding: 32px var(--m) 24px; }
@@ -187,9 +204,14 @@ a.cell:hover { transform: scale(1.06); }
 .prods-head h2 { margin-bottom: 0; }
 .filters { position: sticky; top: 0; z-index: 5; background: var(--g1); padding: 12px var(--m); display: grid; grid-template-columns: var(--axis) minmax(0, 1fr); gap: 8px 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; }
-.chips:first-child { grid-column: 2; grid-row: 1; }
-.chips:nth-child(2) { grid-column: 2; grid-row: 2; }
-.f-result { grid-column: 1; grid-row: 1 / 3; align-self: center; font-size: var(--t-lg); font-weight: 500; color: var(--green); padding-right: 24px; }
+.f-search { grid-column: 1; grid-row: 1; padding-right: 24px; }
+.f-search input { width: 100%; max-width: 420px; min-height: 36px; padding: 0 12px; background: #fff; border: 1px solid #767676; border-radius: 0; color: var(--ink-strong); font: inherit; font-size: 16px; }
+.f-search input::placeholder { color: var(--soft); opacity: 1; }
+.f-search input:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+::highlight(busca) { background: var(--peach-2); color: var(--ink-strong); }
+.chips:nth-child(2) { grid-column: 2; grid-row: 1; }
+.chips:nth-child(3) { grid-column: 2; grid-row: 2; }
+.f-result { grid-column: 1; grid-row: 2; align-self: center; font-size: var(--t-lg); font-weight: 500; color: var(--green); padding-right: 24px; }
 .f-clear { display: inline-flex; align-items: center; gap: 6px; font-size: var(--t-body); font-weight: 400; color: var(--ink); margin-left: 16px; }
 .f-clear:hover { color: #b93700; }
 .f-clear[hidden] { display: none; }
@@ -260,6 +282,8 @@ details[open] > summary { background: transparent; }
 .foot-meta { display: grid; grid-template-columns: var(--axis) minmax(0, 1fr) auto; font-size: 14px; gap: 4px 0; }
 .foot-meta a { position: relative; justify-self: start; text-decoration: none; }
 
+@media (max-width: 1360px) { .nav-changes { display: none; } }
+
 /* ---------- ATÉ 1000px: o eixo recolhe ---------- */
 @media (max-width: 1100px) {
   .axis, .qp, .filters, .foot-top, .foot-meta { grid-template-columns: minmax(0, 1fr); }
@@ -274,7 +298,10 @@ details[open] > summary { background: transparent; }
   .map-side { position: static; margin-bottom: 40px; }
   .prods-head p { margin-top: 16px; }
   .filters { position: static; }
-  .chips:first-child, .chips:nth-child(2), .f-result { grid-column: 1; grid-row: auto; }
+  .f-search, .chips:nth-child(2), .chips:nth-child(3), .f-result { grid-column: 1; grid-row: auto; }
+  .f-search { padding-right: 0; }
+  .f-search input { max-width: none; }
+  .changes-side { padding-right: 0; margin-bottom: 32px; }
   .f-result { order: 3; padding-top: 4px; }
   .ch-side { position: static; margin-bottom: 20px; }
   .q-panel, .band, .ch { scroll-margin-top: 16px; }

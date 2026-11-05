@@ -1,0 +1,33 @@
+{
+  "updated": "2026-11-05",
+  "entries": [
+    {
+      "example": true,
+      "date": "2026-10-28",
+      "type": "prazo",
+      "product": "onesource-tax-one-for-sap",
+      "q": "Q4",
+      "match": "Eventos periódicos mensais",
+      "before": "Q3",
+      "reason": { "pt": "API ainda não disponibilizada pelo Fisco.", "en": "API not yet made available by the Tax Authorities." }
+    },
+    {
+      "example": true,
+      "date": "2026-10-15",
+      "type": "status",
+      "product": "onesource-dfe-governance",
+      "q": "Q3",
+      "match": "Preparação 2027",
+      "reason": { "pt": "Entrega concluída pela Thomson Reuters.", "en": "Delivery completed by Thomson Reuters." }
+    },
+    {
+      "example": true,
+      "date": "2026-10-02",
+      "type": "novo",
+      "product": "onesource-indirect-tax-determination-idt",
+      "q": "Q4",
+      "match": "Imposto Seletivo",
+      "reason": { "pt": "Nova exigência regulatória.", "en": "New regulatory requirement." }
+    }
+  ]
+}

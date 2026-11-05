@@ -86,7 +86,62 @@
   const FRONT = en ? ['product line', 'product lines'] : ['frente', 'frentes'];
   const JOIN = en ? 'across' : 'em';
 
+  /* Busca: ignora acentos e maiúsculas, e todos os termos precisam aparecer */
+  const search = document.querySelector('[data-search]');
+  const fold = (s) => {
+    let out = '';
+    for (let i = 0; i < s.length; i++) {
+      const c = s[i].toLowerCase();
+      const base = c.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      out += base.length === 1 ? base : (c.length === 1 ? c : s[i]);
+    }
+    return out;
+  };
+  const index = new Map();
+  chapters.forEach((ch) => {
+    const name = ch.querySelector('h3').textContent;
+    ch.querySelectorAll('.q-panel').forEach((panel) => {
+      panel.querySelectorAll('.band').forEach((b) => {
+        const titleEl = b.querySelector('.band-t');
+        const text = fold(`${b.textContent} ${name} ${panel.dataset.q}`);
+        index.set(b, { text, compact: text.replace(/-/g, ''), title: fold(titleEl.textContent), detail: fold((b.querySelector('.band-d') || {}).textContent || '') });
+      });
+    });
+  });
+  /* O termo vale a partir do início de uma palavra: "dere" não casa com "considere" */
+  const wordAt = (text, term, from = 0) => {
+    for (let at = text.indexOf(term, from); at !== -1; at = text.indexOf(term, at + 1)) {
+      if (at === 0 || !/[a-z0-9]/.test(text[at - 1])) return at;
+    }
+    return -1;
+  };
+  const has = (entry, term) => wordAt(entry.text, term) !== -1 || wordAt(entry.compact, term.replace(/-/g, '')) !== -1;
+
+  function highlight(terms) {
+    if (!window.CSS || !CSS.highlights || typeof Highlight === 'undefined') return;
+    CSS.highlights.delete('busca');
+    if (!terms.length) return;
+    const ranges = [];
+    index.forEach((_, band) => {
+      if (band.hidden) return;
+      const walker = document.createTreeWalker(band, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        const text = fold(node.nodeValue);
+        terms.forEach((term) => {
+          for (let at = wordAt(text, term); at !== -1; at = wordAt(text, term, at + term.length)) {
+            const r = new Range();
+            r.setStart(node, at);
+            r.setEnd(node, at + term.length);
+            ranges.push(r);
+          }
+        });
+      }
+    });
+    CSS.highlights.set('busca', new Highlight(...ranges));
+  }
+
   function apply() {
+    const terms = fold(search.value).split(/\s+/).filter(Boolean);
     const themes = themeChips.filter((c) => c.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.theme);
     const stats = statusChips.filter((c) => c.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.status);
     let total = 0;
@@ -98,8 +153,15 @@
         let inPanel = 0;
         panel.querySelectorAll('.band').forEach((b) => {
           const its = b.dataset.themes.split('|');
-          const show = (!themes.length || themes.some((t) => its.includes(t))) && (!stats.length || stats.includes(b.dataset.status));
+          const entry = index.get(b);
+          const show = (!themes.length || themes.some((t) => its.includes(t))) && (!stats.length || stats.includes(b.dataset.status)) && terms.every((t) => has(entry, t));
           b.hidden = !show;
+          /* Quem casa só no detalhe abre sozinho e fecha quando a busca muda */
+          if (b.tagName === 'DETAILS') {
+            const auto = show && terms.length > 0 && !terms.every((t) => wordAt(entry.title, t) !== -1) && terms.some((t) => wordAt(entry.detail, t) !== -1);
+            if (auto && !b.open) { b.open = true; b.dataset.auto = '1'; }
+            if (!auto && b.dataset.auto) { b.open = false; delete b.dataset.auto; }
+          }
           if (show) { inPanel++; tally[b.dataset.status]++; }
         });
         n += inPanel;
@@ -119,17 +181,22 @@
       ch.querySelectorAll('.tab').forEach((t) => { t.tabIndex = t.getAttribute('aria-selected') === 'true' ? 0 : -1; });
     });
     result.textContent = `${plural(total, ...ITEM)} ${JOIN} ${plural(visibleChapters, ...FRONT)}`;
-    clear.hidden = !themes.length && !stats.length;
+    clear.hidden = !themes.length && !stats.length && !terms.length;
     empty.hidden = total !== 0;
+    highlight(terms);
   }
 
   [...themeChips, ...statusChips].forEach((c) => c.addEventListener('click', () => {
     c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'));
     apply();
   }));
+  let timer;
+  search.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(apply, 120); });
   clear.addEventListener('click', () => {
     [...themeChips, ...statusChips].forEach((c) => c.setAttribute('aria-pressed', 'false'));
+    search.value = '';
     apply();
+    search.focus();
   });
 
   /* Links internos: abrem a aba certa e o item antes de rolar até ele */
@@ -141,6 +208,7 @@
     if (!ch) return;
     if (target.matches('.band, .q-panel')) {
       [...themeChips, ...statusChips].forEach((c) => c.setAttribute('aria-pressed', 'false'));
+      search.value = '';
       apply();
       selectTab(ch, target.closest('.q-panel').dataset.q);
       apply();
