@@ -1,4 +1,9 @@
 (() => {
+  /* Trocar de idioma mantém o ponto da página */
+  document.querySelectorAll('[data-lang-link]').forEach((a) => a.addEventListener('click', () => {
+    if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash;
+  }));
+
   /* Entrada das partes de cada seção, com atraso em cascata dentro do mesmo grupo */
   const reveal = [...document.querySelectorAll('[data-reveal]')];
   const groups = new Map();
@@ -73,7 +78,13 @@
   const empty = document.querySelector('[data-empty]');
   const themeChips = [...document.querySelectorAll('.chip[data-theme]')];
   const statusChips = [...document.querySelectorAll('.chip[data-status]')];
-  const LABELS = [['entregue', 'entregue', 'entregues'], ['previsto', 'previsto', 'previstos'], ['sem', 'sem status', 'sem status']];
+  const en = document.documentElement.lang === 'en';
+  const LABELS = en
+    ? [['entregue', 'delivered', 'delivered'], ['previsto', 'planned', 'planned'], ['sem', 'no status', 'no status']]
+    : [['entregue', 'entregue', 'entregues'], ['previsto', 'previsto', 'previstos'], ['sem', 'sem status', 'sem status']];
+  const ITEM = en ? ['item', 'items'] : ['item', 'itens'];
+  const FRONT = en ? ['product line', 'product lines'] : ['frente', 'frentes'];
+  const JOIN = en ? 'across' : 'em';
 
   function apply() {
     const themes = themeChips.filter((c) => c.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.theme);
@@ -99,7 +110,7 @@
       ch.hidden = n === 0;
       total += n;
       if (n) visibleChapters++;
-      ch.querySelector('[data-count]').textContent = `${plural(n, 'item', 'itens')}: ${LABELS.filter(([k]) => tally[k]).map(([k, o, m]) => plural(tally[k], o, m)).join(', ')}`;
+      ch.querySelector('[data-count]').textContent = `${plural(n, ...ITEM)}: ${LABELS.filter(([k]) => tally[k]).map(([k, o, m]) => plural(tally[k], o, m)).join(', ')}`;
       const selected = ch.querySelector('.tab[aria-selected="true"]');
       if (n && (!selected || selected.disabled)) {
         const fallback = [...ch.querySelectorAll('.tab:not(:disabled)')].pop();
@@ -107,7 +118,7 @@
       }
       ch.querySelectorAll('.tab').forEach((t) => { t.tabIndex = t.getAttribute('aria-selected') === 'true' ? 0 : -1; });
     });
-    result.textContent = `${plural(total, 'item', 'itens')} em ${plural(visibleChapters, 'frente', 'frentes')}`;
+    result.textContent = `${plural(total, ...ITEM)} ${JOIN} ${plural(visibleChapters, ...FRONT)}`;
     clear.hidden = !themes.length && !stats.length;
     empty.hidden = total !== 0;
   }

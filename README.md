@@ -5,3 +5,7 @@ Proposta de redesign do roadmap de produtos da Thomson Reuters, por Romulo Nasci
 - `index.html`: home com as quatro frentes; só Reforma Tributária é clicável.
 - `reforma.html`: Reforma Tributária 2026, com os trimestres como eixo, mapa e filtros.
 - `_build/`: gera as páginas. Rode `node _build/build.mjs` e veja com `node _build/serve.mjs` (porta 4173).
+
+## Idiomas
+
+O português está em `index.html` e `reforma.html`, e o inglês em `index-en.html` e `reforma-en.html`. O seletor PT/EN mantém o ponto da página. O texto em inglês fica em `_build/en.json`: usa a redação da página oficial em inglês onde o item existe, e os demais itens foram traduzidos para esta proposta.
