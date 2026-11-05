@@ -1,0 +1,1516 @@
+[
+ {
+  "name": "ONESOURCE Tax One",
+  "note": "",
+  "id": "onesource-tax-one",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "Relatórios de Conferência",
+     "lead": "Documentos Fiscais (Com base nas tabelas da Reforma Tributária)",
+     "body": [
+      "- Documentário Fiscal SAFX3007, SAFX3008, SAFX3009",
+      "- Utilities SAFX3042, SAFX3043"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Beta Apuração da Reforma Tributária de Consumo - CBS",
+     "lead": "",
+     "body": [
+      "- Visão Contribuinte (Débito, Crédito e Saldo)",
+      "- Exportação de Dados em CSV"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Beta Conciliação da Reforma Tributária de Consumo - CBS",
+     "lead": "",
+     "body": [
+      "- Visão Contribuinte com Inteligência Artificial embarcada"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IA"
+     ]
+    }
+   ],
+   "Q2": [
+    {
+     "title": "Apuração da Reforma Tributária de Consumo CBS",
+     "lead": "",
+     "body": [
+      "- Visão Contribuinte: Habilitação Demais Documentos Fiscais e Utilities"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Arquitetura e Concepção da DeRE",
+     "lead": "Declaração Eletrônica de Regimes Especificos",
+     "body": [
+      "Discussões clientes potenciais piloto para desenho de motor de cálculo e solução"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    },
+    {
+     "title": "Beta Contabilização da Reforma Tributária de Consumo",
+     "lead": "",
+     "body": [
+      "- Contabilização por Apuração:",
+      "Determinação de condições para lançamentos: Conta a Débito/Crédito, Centro de Custo, Tipo de Documento.",
+      "Geração de Lançamento Contábil para Integração API e por Arquivo"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Arquitetura e Concepção da DeRE",
+     "lead": "Declaração Eletrônica de Regimes Especificos",
+     "body": [],
+     "status": "previsto",
+     "when": "ago",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    },
+    {
+     "title": "Inclusão de campos reservados nas tabelas SAFX 3007, 3008, 3009, 3042 e 3043.",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "ago",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Ajuste do Relatório RTC",
+     "lead": "inclusão de campos reservados nas tabelas SAFX 3007, 3008,3009, 3042 e 3043.",
+     "body": [],
+     "status": "previsto",
+     "when": "ago",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "DeRE - Declaração Eletrônica de Regimes Especificos",
+     "lead": "",
+     "body": [
+      "Fase I:",
+      "previsão de entrega: Ago/2026",
+      "- Habilitação Cadastral Plano de Contas Comentado",
+      "- Atribuição Código de Tributação",
+      "- Balancete",
+      "- Painel Geração e Controle de Eventos para envio e retorno",
+      "previsão de entrega: Set/2026",
+      "- Evento D1001 - Informações do Contribuinte",
+      "- Evento D1011 - Plano Geral de Contas Comentado",
+      "- Painel de Geração de Eventos (Cockpit)",
+      "- Mensageria: Eventos D-1001 e D-1011"
+     ],
+     "status": "previsto",
+     "when": "ago e set",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Habilitação do imposto IBS no módulo.",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": [
+      "IBS"
+     ]
+    },
+    {
+     "title": "Apuração de Consumo CBS",
+     "lead": "",
+     "body": [
+      "- Visão Fisco e Contribuinte: Inclusão Detalhes em Relatório de Apuração para as visões de Débito e Crédito"
+     ],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Apuração da Reforma Tributária de Consumo CBS",
+     "lead": "",
+     "body": [
+      "- Visão Fisco: Integração de Eventos Reforma Tributária de Consumo",
+      "Emitente",
+      "· 112110: Pagamento integral → crédito presumido",
+      "· 110001: Cancelamento de evento - Emitente",
+      "· 112130: Perecimento/perda/roubo CIF",
+      "· 112140: Fornecimento não realizado (pgto. ant.)",
+      "Destinatário",
+      "· 211128: Aceite de débito por nota de crédito",
+      "· 110001: Cancelamento de evento - Destinatário",
+      "· 211124: Perecimento/perda/roubo FOB",
+      "· 211110: Solicitação crédito presumido",
+      "· 211140: Crédito combustível (art. 172)"
+     ],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Atualização dos Manuais Layout para acomodar as informações da NFAg (Nota Fiscal Eletrônica de Água - modelo 75)",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Atualização dos Manuais Layout para acomodar as informações da NFGás (Nota Fiscal Eletrônica de Gás - modelo 76)",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Painel de Controle de Créditos CBS com Inteligência Artificial Embarcarda",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IA"
+     ]
+    },
+    {
+     "title": "Conciliação da Reforma Tributária de Consumo - CBS",
+     "lead": "",
+     "body": [
+      "Visão:",
+      "- Contábil vs Fiscal: Razão vs Documento Fiscal"
+     ],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Apuração de Consumo CBS - FISCO",
+     "lead": "",
+     "body": [
+      "- Conexão da API Consulta Débito",
+      "- Conexão da API Consulta Crédito",
+      "- Conexão da API Consulta Pagamento/Recolhimento"
+     ],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "DeRE - Declaração Eletrônica de Regimes Especificos",
+     "lead": "",
+     "body": [
+      "Fase II (parte 1) - previsão de entrega: Out/2026",
+      "- Evento D1106 - Aplicação Financeira",
+      "- Evento D1199 - Fechamento Eventos Mensais",
+      "- Evento D2101 - Títulos da Dívida",
+      "- Evento D9101 - Retorno Balancete",
+      "- Evento D9106 - Retorno Aplicação Financeira",
+      "- Evento D9199 - Retorno Fechamento Mensal",
+      "- Evento D9121 - Retorno Títulos da Dívida",
+      "- Mensageria demais eventos",
+      "- Comparador de Cálculo de Tributos",
+      "Fase III - previsão de entrega: Nov/2026",
+      "- Evento Transacionais",
+      "- Reflexo Apuração CBS/IBS",
+      "Fase II (parte 2) - previsão de entrega: Dez/2026",
+      "- Integração Transacional",
+      "- Painel Geração e Controle de Eventos para envio e retorno",
+      "- Complemento na Apuração CBS"
+     ],
+     "status": "previsto",
+     "when": "out a dez",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS",
+      "DeRE"
+     ]
+    },
+    {
+     "title": "TDM: Tax Data Management (Exposição de Dados Via API)",
+     "lead": "",
+     "body": [
+      "Dicionários de Dados da Reforma Tributária de Consumo:",
+      "- Notas Fiscais Reforma Tributária de Consumo",
+      "- Eventos Complementares de Notas",
+      "- Apuração CBS"
+     ],
+     "status": "previsto",
+     "when": "dez",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Ajuste em Massa:",
+     "lead": "",
+     "body": [
+      "- Tabelas de Documentário Fiscal: X3007, X3008 e X3009",
+      "- Tabelas de Documentário Fiscal: X3042 e x3043"
+     ],
+     "status": "previsto",
+     "when": "dez",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Apuração CBS",
+     "lead": "",
+     "body": [
+      "Ajuste a Débito e Crédito: Instrumentação dos Eventos a partir da Reforma Tributária."
+     ],
+     "status": "previsto",
+     "when": "dez",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Conciliação - CBS/IBS",
+     "lead": "",
+     "body": [
+      "previsão de entrega: Nov/2026",
+      "- Integração com ERP",
+      "- Contábil vs Fiscal: Razão vs Documento Fiscal",
+      "- Contabilização por Documento: Parametrização e Geração Integração API e por Arquivo",
+      "previsão de entrega: Dez/2026",
+      "- Origem vs Solução Fiscal: Integração dados Brutos Origem e Cruzamento",
+      "- Habilitação Perfis",
+      "- Solução Fiscal vs Fisco: Dados Fiscais Apuração Contribuinte e Cruzamento com Fisco",
+      "- Permitir acessar \"todos\" estabelecimentos no módulo"
+     ],
+     "status": "previsto",
+     "when": "nov e dez",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE Tax One For SAP",
+  "note": "",
+  "id": "onesource-tax-one-for-sap",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "Estruturação do processo de Conciliação",
+     "lead": "",
+     "body": [
+      "- Conciliação por Nota Fiscal Contribuinte x Fisco (CBS – Débitos): comparação nota a nota, identificando divergências de base e divergências de valor.",
+      "- Conciliação Contábil x Fiscal (CBS – Débitos): comparação de valores consolidados por período, com suporte à evidenciação para auditoria.",
+      "- Tipificação de divergências: todas as divergências serão classificadas por tipo, com regras determinísticas."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Apuração CBS",
+     "lead": "Estruturação de Débitos e Créditos Não Apropriados",
+     "body": [
+      "- Identificação e organização de débitos de CBS e créditos não apropriados",
+      "- Ajustes na composição inicial do resultado",
+      "- Preparação da base para evolução das demais operações da Apuração Assistida"
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    }
+   ],
+   "Q2": [
+    {
+     "title": "Apuração CBS",
+     "lead": "",
+     "body": [
+      "- Evolução das visões do contribuinte e do Fisco, incluindo detalhamento de documentos, resumos por aba, saldo atualizado, eventos e débitos aguardando processamento.",
+      "- Inclusão de notas de serviço no cálculo da CBS.",
+      "- Disponibilização de relatórios sintéticos de débitos processados e créditos não apropriados.",
+      "- Exportação de dados em Excel, CSV e TXT.",
+      "- Visualização do status da apuração, linha do tempo e mensagens orientativas."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Conciliação Fiscal CBS",
+     "lead": "",
+     "body": [
+      "- Consolidação da conciliação por período.",
+      "- Comparação entre execuções e identificação de divergências recorrentes.",
+      "- Exportação de relatório de auditoria em Excel e implementação de trilha de auditoria para rastrear alterações, responsáveis e histórico de execução.",
+      "- Nova tela inicial da conciliação com filtros avançados e logs de execução.",
+      "- Reestruturação das telas de configuração de ciclos (utilities) e associação contábil x fiscal."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "DERE (Declaração de Regimes Específicos)",
+     "lead": "",
+     "body": [
+      "- Estruturação da base para futura obrigação.",
+      "- Mapeamento de contas contábeis (COD_TRIB) com suporte à carga em massa.",
+      "- Captura e armazenamento de protocolos de retorno da SEFAZ."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    },
+    {
+     "title": "Report Flexível",
+     "lead": "",
+     "body": [
+      "- Inclusão de notas de serviço e chave eletrônica na fonte de dados “Notas Fiscais Reforma Tributária”."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Conciliação Assistida por Inteligência Artificial – CBS e demais tributos",
+     "lead": "",
+     "body": [
+      "- Redução do tempo de classificação – a IA sugere a tipificação de cada divergência com base no histórico validado pela equipe; confirmação manual apenas necessária.",
+      "- Decisões fundamentadas no grau de confiança – cada sugestão exibe o nível de confiança do modelo, permitindo priorização de revisões humanas conforme necessário.",
+      "- Auditoria preservada – nenhuma classificação é aplicada sem confirmação; cada decisão fica registrada em log.",
+      "- Cobertura ampliada – atuação nas visões Contábil x Fiscal e Contribuinte x Fisco, para CBS e demais impostos."
+     ],
+     "status": "previsto",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IA"
+     ]
+    },
+    {
+     "title": "DeRE – Fase 1: Validação ponta a ponta dos eventos cadastrais junto à Receita",
+     "lead": "",
+     "body": [
+      "- Geração de XML com cadastro conferido – dados da Empresa e Plano de Contas originários do CTR SAP (TDF/DRC), com validação de campos obrigatórios prévia à geração.",
+      "- Bloqueio de geração em caso de pendência – impedimento de geração do XML enquanto houver campos obrigatórios em aberto; exibição de inconsistência antes do envio, não na obrigação mensal.",
+      "- Rastreamento do ciclo completo de eventos – envio, alteração e exclusão com geração, armazenamento, consulta e exibição de status evento a evento."
+     ],
+     "status": "previsto",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    },
+    {
+     "title": "DeRE – Fase 2: Integração com a Receita, monitoramento de eventos e balancete",
+     "lead": "",
+     "body": [
+      "- Comunicação com a Receita sem sair do Tax One for SAP – montagem e envio de lote, consulta de processamento por protocolo e persistência de protocolo e recibo por evento, com integração completa dentro do produto.",
+      "- Interpretação clara de rejeições – separação de status em \"em processamento\", \"processado com sucesso\", \"com advertência\" e \"rejeitado com erro\"; apresentação organizada de mensagens do XML de retorno com reprocessamento no mesmo painel.",
+      "- Visibilidade de prazos – exibição de prazo para cada evento com contador de dias restantes.",
+      "- Preparação para envio mensal – estruturação de Balancete (D-1101), Aplicação Financeira (D-1106), Fechamento (D-1199) e Títulos da Dívida (D-2101), com saldos de contas carregados do CTR SAP (TDF/DRC) para ciclo de entrega até dia 15 do mês seguinte.",
+      "- Rastreabilidade auditória – validação pré-envio de estrutura, assinatura e consistência do COD_TRIB; rastreio por lote e por evento; registro integral de alterações."
+     ],
+     "status": "previsto",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    },
+    {
+     "title": "Apuração Contribuinte x Fisco – Versionamento normativo e múltiplos mandantes",
+     "lead": "",
+     "body": [
+      "- Isolamento de mudanças normativas – versionamento de regras de cálculo por período de vigência, impedindo que publicações novas reescrevam apurações já fechadas.",
+      "- Controle normativo por imposto – parametrização independente para IS, CBS e IBS; ativação de imposto somente com regulamentação publicada.",
+      "- Suportação de múltiplos mandantes – operação de ambientes SAP com múltiplos mandantes na mesma apuração."
+     ],
+     "status": "previsto",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Dados fiscais da Reforma Tributária – Leitura nativa dos campos padrão do CTR SAP",
+     "lead": "",
+     "body": [
+      "- Rastreabilidade do número de apuração: correspondência entre valor apresentado e registro no CTR SAP, com rastreamento da apresentação até documento de origem; leitura dos campos fiscais diretamente da estrutura padrão, sem cálculo intermediário ou regra paralela.",
+      "- Consumo nativo de dados pelos aplicativos: integração de Nota Fiscal, Apuração Assistida CBS, Geração de Relatórios e Conciliação CBS ao consumo de dado nativo; disponibilização de demais aplicativos para consumo dos dados standard do CTR SAP."
+     ],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "DeRe – Eventos periódicos mensais transmitidos direto do produto",
+     "lead": "",
+     "body": [
+      "- Cumprimento da obrigação integrado: captura de dados, geração de XML no leiaute oficial, transmissão à Receita Federal e recebimento de retorno dentro do produto, com comprovante de envio armazenado junto ao evento; eliminação da necessidade de montagem de arquivo externo e envio por canal paralelo.",
+      "- Rastreabilidade de transmissões e retornos: disponibilização de status de cada operação de transmissão, com avisos e erros estruturados para ação, acompanhados de trilha auditória.",
+      "- Cobertura: D-1121 (deduções da apuração), D-1198 (reabertura do período), D-2101 (título de dívidas públicas), D-2201 (serviços remunerados por preço), D-2202 (tarifas do regime geral), D-2211 (operações de crédito e valores mobiliários), D-2221 (antecipação de recebíveis), D-2231 (arrendamento mercantil), D-2241 (arranjos de pagamento - identificação), D-2242 (arranjos de pagamento - operações), D-2251 (seguros, previdência complementar e capitalização), D-3201 (planos de assistência à saúde) e D-4201 (concursos de prognósticos).",
+      "O D-1199 (fechamento do período) depende da liberação do recebimento por parte da Receita Federal."
+     ],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "DeRE"
+     ]
+    },
+    {
+     "title": "Apuração da CBS – Paridade com a Apuração Assistida da Receita Federal",
+     "lead": "",
+     "body": [
+      "- Disponibilidade completa de abas e campos: inclusão de todas as abas e campos da apuração assistida da Receita Federal no Tax One for SAP, com navegação do consolidado ao detalhe do detalhe, seguindo padrão das abas atuais.",
+      "- Alinhamento de nomenclatura com a Receita Federal: denominação dos campos conforme utilizada pela Receita Federal, eliminando necessidade de tradução mental entre nomenclatura do Tax One for SAP e do portal federal."
+     ],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    },
+    {
+     "title": "Apuração da CBS – Integração com a Receita Federal e visão do Fisco na tela",
+     "lead": "",
+     "body": [
+      "- Comparação de valores apurados com registros da Receita Federal: exibição de valores da apuração assistida ao lado dos valores da base na própria apuração de CBS, com divergência visível para ação imediata.",
+      "- Confiabilidade de valores exibidos: sincronização automática com registro de ocorrência; sinalização de falha de integração na tela em lugar de valor desatualizado apresentado como atual.",
+      "Apuração do IBS – Visão do Fisco com os Dados do Comitê Gestor",
+      "- Integração de visões na mesma tela: exibição de valores da apuração assistida do Comitê Gestor ao lado dos valores da base na visão do Fisco, completando a comparação prevista na jornada de análise; eliminação da necessidade de consulta ao ambiente do Comitê Gestor e reconciliação manual.",
+      "- Rastreabilidade integral de origem e timing: sincronização automatizada com registro temporal; sinalização de falhas de integração na interface sem apresentação de valores obsoletos.",
+      "Observação: Sujeito à liberação de APIs da Receita Federal e Comitê Gestor, sem datas definidas."
+     ],
+     "status": "previsto",
+     "when": "dez",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Apuração do IBS – Jornada de análise do consolidado ao documento de origem",
+     "lead": "",
+     "body": [
+      "- Análise da apuração de IBS sem saída do produto – existência da jornada de análise dentro do Tax One for SAP, com consolidado do período na abertura e rastreamento até documento de origem por nível, sem variação de valores; eliminação da necessidade de consulta ao ambiente do Comitê Gestor e reconciliação manual.",
+      "- Integração de perspectivas na mesma tela – incorporação de Contribuinte e Fisco na estrutura da jornada desde o início; nesta entrega, valores originários da base do cliente na perspectiva Contribuinte; perspectiva do Fisco identificada no produto, estruturada para recepção de dados da integração com Comitê Gestor."
+     ],
+     "status": "previsto",
+     "when": "dez",
+     "mixed": false,
+     "themes": [
+      "IBS"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE DFE",
+  "note": "",
+  "id": "onesource-dfe",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "Análise das Notas Técnicas da Reforma Tributária",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Atualização do Layout de Emissão da NFS-e Padrão Nacional",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Adequação dos Relatórios CT-e \" Listagem de XML Completa \" para Inclusão dos Campos IBS/CBS",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Mapeamento de Cenários da NFS-e Nacional via De x Para",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Adequação dos relatórios CT-e \"Listagem de XML Completa\" para inclusão dos campos IBS/CBS",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ],
+   "Q2": [
+    {
+     "title": "BA - Análise das Notas Técnicas da Reforma Tributária",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Geração do Relatório \" Listagem de XML Completa \" para DPS Nacional",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Adequação do Portal DF-e NF-e para Exibição e Filtros de IBS/CBS",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Adequação do Portal DF-e CT-e para Exibição e Filtros de IBS/CBS",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Mapeamento de Cenários da NFS-e Nacional via De x Para",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Implementação do Receptor NFS-e Padrão Nacional",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Suporte a CNPJ Alfanumérico",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CNPJ alfanumérico"
+     ]
+    },
+    {
+     "title": "NF-e e CT-e- Adequação das interfaces do portal OneSource DF-e para exibição dos novos campos da Reforma Tributária (IBS, CBS, IS)",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Criacao do layout DANFE's para NFSe Nacional",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Análise das Notas Técnicas da Reforma Tributária",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Mapeamento de Cenários da NFS-e Nacional via De x Para",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Registro de Eventos via tela",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Inclusão dos Demais Municípios na NFS-e Nacional",
+     "lead": "",
+     "body": [],
+     "status": "entregue",
+     "when": "mai",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "NFS-e",
+     "lead": "Adequação do DF-e para suporte ao CNPJ Alfanumérico (NT 009 RTC) - DPS e RPS",
+     "body": [],
+     "status": "entregue",
+     "when": "jul",
+     "mixed": false,
+     "themes": [
+      "NFS-e",
+      "CNPJ alfanumérico"
+     ]
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Análise das Notas Técnicas da Reforma Tributária",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Mapeamento de Cenários da NFS-e Nacional via De x Para",
+     "lead": "",
+     "body": [],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Eventos via tela do Onesource DF-e",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": []
+    }
+   ]
+  }
+ },
+ {
+  "name": "Interfaces - ONESOURCE DFE",
+  "note": "",
+  "id": "interfaces-onesource-dfe",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "Todos Conectores",
+     "lead": "",
+     "body": [
+      "- NFS-e - NT 007 RTC [entregue em Fev-Mar/2026]",
+      "- NFSe - Mapeamento de 10 novos campos (totCIBS de ibscbs)",
+      "entregue em Fev-Mar/2026",
+      "- NFe - Nota Técnica 2022.002 v.1.30 e 1.30a",
+      "entregue em Mar/2026"
+     ],
+     "status": "entregue",
+     "when": "fev e mar",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Conector SAP",
+     "lead": "| Adequação do campo cCIB no grupo __ibscbs__",
+     "body": [],
+     "status": "entregue",
+     "when": "mar",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Conector EBS R12 e Conector SAP",
+     "lead": "| CTe - NT RTC 2025.001 V.1.14",
+     "body": [],
+     "status": "entregue",
+     "when": "mar",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q2": [
+    {
+     "title": "Todos Conectores",
+     "lead": "",
+     "body": [
+      "- Tratamento do CNPJ como String",
+      "entregue em Mai/2026",
+      "- Notas de Débito e Crédito - Adequação ao Ajuste SINIEF nº 49/2025",
+      "entregue em Jun/2026"
+     ],
+     "status": "entregue",
+     "when": "mai e jun",
+     "mixed": false,
+     "themes": [
+      "CNPJ alfanumérico"
+     ]
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Todos Conectores",
+     "lead": "| NFe/NFCe - NT 2025.002-RTC v1.40 e parte da Nota Técnica 2026.002_v.1.00 - versaoLayoutDFe 4.18",
+     "body": [],
+     "status": "entregue",
+     "when": "jul",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Conector Oracle Cloud",
+     "lead": "| Implementação dos eventos da Reforma Tributária para captura no conector",
+     "body": [],
+     "status": "entregue",
+     "when": "jul",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Conector EBS R12",
+     "lead": "| Implementação dos enventos da Reforma Tributária para captura no conector",
+     "body": [],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": []
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE DFE Governance",
+  "note": "",
+  "id": "onesource-dfe-governance",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "Aplicação de SAP Notes",
+     "lead": "Identificação, priorização e aplicação das SAP Notes da Reforma Tributária (CBS/IBS) nos ambientes do DFe Governance, garantindo conformidade contínua do produto com as mudanças legais.",
+     "body": [],
+     "status": "entregue",
+     "when": "fev",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Ampliação para 90% das Prefeituras via NFS-e Nacional",
+     "lead": "Expansão da cobertura do módulo NFS-e para 90% dos municípios brasileiros, com base no padrão unificado da NFS-e Nacional.",
+     "body": [],
+     "status": "entregue",
+     "when": "fev",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    }
+   ],
+   "Q2": [
+    {
+     "title": "Novos Eventos da Sefaz para o Destinatário",
+     "lead": "Suporte aos novos eventos de manifestação e comunicação da Sefaz direcionados ao destinatário do documento fiscal, integrados ao fluxo de monitoramento do DFe Governance.",
+     "body": [],
+     "status": "entregue",
+     "when": "mai",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Evolução para o CNPJ Alfanumérico",
+     "lead": "Adaptação do DFe Governance para reconhecer e processar o novo formato de CNPJ alfanumérico definido pela Receita Federal, incluindo atualização das rotinas de validação e integração.",
+     "body": [],
+     "status": "entregue",
+     "when": "mai",
+     "mixed": false,
+     "themes": [
+      "CNPJ alfanumérico"
+     ]
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Ajustes de Leiautes - DANFE, DACTE e NFS-e Nacional",
+     "lead": "Atualização dos leiautes de representação visual dos documentos fiscais (DANFE, DACTE e DANFS-e Nacional) para incorporar os novos campos e regras tributárias da Reforma Tributária.",
+     "body": [],
+     "status": "entregue",
+     "when": "ago",
+     "mixed": false,
+     "themes": [
+      "NFS-e"
+     ]
+    },
+    {
+     "title": "Preparação 2027 - CBS e IBS Plena",
+     "lead": "Estruturação técnica do DFe Governance para a fase de cobrança plena de CBS e IBS, com mapeamento antecipado de regras de cálculo e novos campos fiscais.",
+     "body": [],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Estabilização da Fase de Testes da Reforma Tributária",
+     "lead": "Monitoramento e ajustes pontuais do DFe Governance durante o período oficial de testes da Reforma Tributária, com correções baseadas nos resultados identificados.",
+     "body": [],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": []
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE DFE Governance Plus",
+  "note": "",
+  "id": "onesource-dfe-governance-plus",
+  "quarters": {
+   "Q1": [],
+   "Q2": [],
+   "Q3": [
+    {
+     "title": "Captura de Novos Eventos do Destinatário de DF-es",
+     "lead": "Suporta a captura e o processamento dos novos eventos do destinatário exigidos pela legislação, com manifestação manual no produto ou automatizada via integração com o ERP - garantindo aderência às obrigações fiscais e impacto direto na apuração assistida. A automação requer configuração prévia de gatilhos para acionamento dos eventos.",
+     "body": [],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Validação RTC e Cruzamento de Dados",
+     "lead": "Aumenta a confiabilidade das escriturações por meio da conciliação entre a Apuração Assistida disponibilizada pelo Fisco e as informações tratadas pelo DFe Governance Plus - incluindo dados fiscais dos documentos de inbound integrados ao ERP, eventos de Emitente capturados e eventos de Destinatário executados a partir do produto.",
+     "body": [],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Suporte a Novos Documentos Fiscais",
+     "lead": "Amplia a cobertura do produto com o processamento de documentos fiscais para fatos geradores ainda não suportados: Bilhete de Passagem Aérea, NF-e de Fatura de Água, Luz, Comunicação e Gás, e Documento Fiscal para Aluguel e Venda de Imóveis.",
+     "body": [],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": []
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE DFE Plus",
+  "note": "",
+  "id": "onesource-dfe-plus",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "DC-e - Declaração de Conteúdo Eletrônica",
+     "lead": "Suporta o ciclo de vida completo da DC-e, documento eletrônico que substitui a declaração em papel no transporte de bens e mercadorias sem obrigatoriedade de emissão de documento fiscal. Contempla consulta, gestão e acompanhamento das declarações emitidas, controle de rejeições, retorno de autorização e eventos relacionados. Atende a todas as modalidades de contingência previstas pela legislação, com entrada e saída automática, reduzindo impactos operacionais e garantindo a continuidade da emissão.",
+     "body": [],
+     "status": "entregue",
+     "when": "jan",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "NFAg-e - Nota Fiscal de Água e Esgoto Eletrônica",
+     "lead": "Suporta a emissão e o processamento da NFAg-e (modelo 75), documento fiscal eletrônico criado para operações de fornecimento de água e esgotamento sanitário. O DFe Governance Plus atende concessionárias e prestadoras de serviços de saneamento em todo o Brasil, com a mesma robustez e cobertura aplicadas aos demais documentos fiscais eletrônicos da plataforma.",
+     "body": [],
+     "status": "entregue",
+     "when": "mar",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q2": [
+    {
+     "title": "NFGás - Nota Fiscal Eletrônica do Gás",
+     "lead": "Suporta a emissão e o processamento da NFGás (modelo 76), documento fiscal eletrônico nacional criado para substituir a emissão em papel nas operações de fornecimento de gás canalizado, consolidando em um único documento as informações fiscais, comerciais e tributárias dessas operações. O DFe Governance Plus atende concessionárias e distribuidoras de gás em todo o Brasil, com a mesma robustez e cobertura aplicadas aos demais documentos fiscais eletrônicos da plataforma.",
+     "body": [],
+     "status": "entregue",
+     "when": "mai",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Adequação ao CNPJ Alfanumérico - Todos os Documentos Fiscais do DFe Plus",
+     "lead": "Garante a compatibilidade de todos os documentos fiscais eletrônicos do DFe Governance Plus com o novo formato de CNPJ alfanumérico, obrigatório a partir de 06/07/2026 por determinação da Receita Federal. A adequação contempla a atualização das mensagerias e dos sistemas integrados, assegurando continuidade operacional sem impacto no fluxo de emissão e recebimento de documentos.",
+     "body": [],
+     "status": "entregue",
+     "when": "jul",
+     "mixed": false,
+     "themes": [
+      "CNPJ alfanumérico"
+     ]
+    },
+    {
+     "title": "BP-e Aéreo - Bilhete de Passagem Eletrônico para Transporte Aéreo",
+     "lead": "Suporta o ciclo de vida completo do BP-e Aéreo (modelo 63), documento fiscal eletrônico para prestações de serviço de transporte aéreo de passageiros. Contempla emissão, autorização, armazenamento, controle de rejeições, retornos, eventos fiscais, cancelamento e não embarque. Atende a todas as modalidades de contingência previstas pela legislação, com entrada e saída automática, reduzindo impactos operacionais e garantindo a continuidade da emissão.",
+     "body": [],
+     "status": "entregue",
+     "when": "jul",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "NF-e ABI - Nota Fiscal Eletrônica para Alienação de Bens Imóveis",
+     "lead": "Suporta a emissão e o processamento da NF-e ABI, documento fiscal eletrônico criado pela Lei Complementar 214/2026 no contexto da Reforma Tributária para documentar operações de alienação de bens imóveis. O documento está em fase de minuta e aguarda publicação normativa definitiva; o DFe Governance Plus acompanha a evolução regulatória para garantir aderência imediata quando da publicação oficial.",
+     "body": [],
+     "status": "entregue",
+     "when": "ago",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Adequação ao Split Payment - Todos os Documentos Fiscais do DFe Plus",
+     "lead": "Adequa todos os documentos fiscais eletrônicos do DFe Governance Plus aos novos campos de Split Payment definidos pelo ENCAT, garantindo aderência às regras estabelecidas pelo Comitê Gestor do IBS/CBS e conformidade com as obrigações fiscais da Reforma Tributária.",
+     "body": [],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE Tax Analyser",
+  "note": "",
+  "id": "onesource-tax-analyser",
+  "quarters": {
+   "Q1": [
+    {
+     "title": "Reforma 360",
+     "lead": "",
+     "body": [
+      "- Retirada do ano de 2025 do Comparativo de Preços - Manutenção de preços atualizados - Sistema com remoção progressiva de ano 2025 e tributos ICMS, PIS e COFINS conforme avanço dos períodos, evitando exibição de dados defasados após transição tributária.",
+      "- Correlação \"De/Para\" entre códigos LC 116 e NBS - Transição de serviços para novo modelo tributário - Sistema com mapeamento de correlação \"De/Para\" entre códigos LC 116 e NBS, facilitação de transição de serviços para o novo modelo tributário.",
+      "- Alíquota Zero na Exportação de Serviços - Exportação de serviços sem IBS/CBS - Motor de cálculo ajustado para reflexão da não incidência de IBS/CBS em exportações conforme as novas diretrizes.",
+      "- Detalhamentos adicionais no Relatório Reforma 360 - Relatório com inclusão de detalhamento por Total da Nota e Quantidade Unitária.",
+      "- Reclassificação da projeção - Sistema com permissão de classificação de itens por lote conforme anexos/benefícios/situações diversas dos artigos da reforma."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Auditoria de XML",
+     "lead": "",
+     "body": [
+      "- Layout Nacional NFS-e (Reforma Tributária) - Centralização de Notas de Serviço - Ferramenta preparada para unificação dos layouts de Notas de Serviço, permissão de upload de XMLs de prestadores e garantia de captura completa de NFSe (Tomador e Prestador).",
+      "- 54 Novas Auditorias IBS/CBS - Expansão de cobertura de regras focada na transição para a Reforma Tributária."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS",
+      "NFS-e"
+     ]
+    }
+   ],
+   "Q2": [
+    {
+     "title": "Reforma 360",
+     "lead": "",
+     "body": [
+      "- Ajuste de visibilidade no Relatório da Reforma: Remoção de campos de PIS/COFINS (pós-2027) e ICMS (pós-2033) - Garantia de precisão das projeções conforme cronograma legal da Reforma Tributária.",
+      "- Tabela Comparativa de Códigos de Serviços - Pesquisa de código NBS relacionado ao código de serviço da LC 116/03."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Auditoria e Cruzamento",
+     "lead": "",
+     "body": [
+      "- Tag DFeReferenciado na Validação de Notas de Devolução (Auditoria 3908) - Validação de notas de devolução - Auditoria 3908 com validação de Tag DFeReferenciado na nova estrutura de documentos fiscais eletrônicos da Reforma Tributária, aumento de precisão das validações, redução de riscos de inconsistências fiscais e manutenção da plataforma aderente às evoluções legislativas."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q4": []
+  }
+ },
+ {
+  "name": "ONESOURCE Brasil Integration",
+  "note": "",
+  "id": "onesource-brasil-integration",
+  "quarters": {
+   "Q1": [],
+   "Q2": [
+    {
+     "title": "Criação de processamentos para as tabelas atender a reforma tributária e parametrização dinâmica para campos variáveis",
+     "lead": "",
+     "body": [
+      "- Modernização do perfil de entrada XML - migração automática do formato Tag obsoleto para XML com remapeamento de tags, eliminando configuração manual",
+      "- Suporte a delimitador XML - ajuste no perfil de entrada para atender corretamente o delimitador XML",
+      "- Busca parcial com asterisco - correspondência parcial de tags no perfil de entrada facilita a localização de campos na parametrização do perfil",
+      "- Preparação para Reforma Tributária - processamento de KITcom tabelas SAFX da Reforma Tributária"
+     ],
+     "status": "entregue",
+     "when": "jun",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Adequações das Atualizações Legais realizadas pelos produtos ONESOURCE Tax One e ONESOURCE DFE.",
+     "lead": "",
+     "body": [],
+     "status": "entregue",
+     "when": "out",
+     "mixed": false,
+     "themes": []
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Adequações das Atualizações Legais realizadas pelos produtos ONESOURCE Tax One e ONESOURCE DFE.",
+     "lead": "",
+     "body": [],
+     "status": "previsto",
+     "when": "dez",
+     "mixed": false,
+     "themes": []
+    }
+   ]
+  }
+ },
+ {
+  "name": "ONESOURCE Indirect Tax Determination - IDT",
+  "note": "*O prazo está condicionado à publicação da legislação aplicável.",
+  "id": "onesource-indirect-tax-determination-idt",
+  "quarters": {
+   "Q1": [],
+   "Q2": [],
+   "Q3": [
+    {
+     "title": "Operações",
+     "lead": "",
+     "body": [
+      "- Entrega de conteúdo para comodato, transferência, operações triangulares e entrega futura"
+     ],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Inclusão de novos Cclasstribs",
+     "lead": "",
+     "body": [],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "IBS-City",
+     "lead": "",
+     "body": [
+      "- Novas autoridades dos municípios da ZFM e das ALC"
+     ],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "IBS"
+     ]
+    },
+    {
+     "title": "ISS",
+     "lead": "",
+     "body": [
+      "- Inclusão dos novos tributos na base de cálculo do ISS e do ISS retido"
+     ],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "ICMS",
+     "lead": "",
+     "body": [
+      "- Inclusão dos novos tributos na base de cálculo"
+     ],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "CBS/IBS",
+     "lead": "",
+     "body": [
+      "- Inclusão do Imposto Seletivo na base de cálculo"
+     ],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ],
+   "Q4": [
+    {
+     "title": "IBS-City",
+     "lead": "",
+     "body": [
+      "- Criação de regras para municípios da ZFM e das ALC."
+     ],
+     "status": "previsto",
+     "when": "nov",
+     "mixed": false,
+     "themes": [
+      "IBS"
+     ]
+    },
+    {
+     "title": "Imposto Seletivo",
+     "lead": "",
+     "body": [
+      "- Criação de regras e alíquotas (serviços)",
+      "previsão de entrega: Out/2026*",
+      "- Criação de regras e alíquotas (produtos e serviços). parte 1/2",
+      "previsão de entrega: Nov/2026*",
+      "- Criação de regras e alíquotas (produtos e serviços). parte 2/2",
+      "previsão de entrega: Dez/2026*"
+     ],
+     "status": "previsto",
+     "when": "out a dez",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "IPI",
+     "lead": "",
+     "body": [
+      "- Criação de regras e alíquotas. parte 1/3",
+      "previsão de entrega: Out/2026*",
+      "- Criação de regras e alíquotas. parte 2/3",
+      "previsão de entrega: Nov/2026*",
+      "- Criação de regras e alíquotas. parte 3/3",
+      "previsão de entrega: Dez/2026*"
+     ],
+     "status": "previsto",
+     "when": "out a dez",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "CBS",
+     "lead": "",
+     "body": [
+      "- Alíquota 2027 1/2",
+      "previsão de entrega: Nov/2026*",
+      "- Alíquota 2027 2/2",
+      "previsão de entrega: Dez/2026*"
+     ],
+     "status": "previsto",
+     "when": "nov e dez",
+     "mixed": false,
+     "themes": [
+      "CBS"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "name": "Interfaces",
+  "note": "",
+  "id": "interfaces",
+  "quarters": {
+   "Q1": [],
+   "Q2": [
+    {
+     "title": "Integração SAP / Integração Oracle EBS / Integração Oracle Cloud",
+     "lead": "",
+     "body": [
+      "Adequações das Evoluções do ONESOURCE Tax One e ONESOURCE DFE."
+     ],
+     "status": "sem",
+     "when": "",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Oracle Cloud V17 | Oracle EBS V11 | OBTI",
+     "lead": "",
+     "body": [
+      "Adequações das Atualizações Legais realizadas pelos produtos ONESOURCE Tax One e ONESOURCE DFE."
+     ],
+     "status": "entregue",
+     "when": "abr",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "OBTI",
+     "lead": "| Adeque os documentos fiscais de utilities",
+     "body": [
+      "- Integre documentos fiscais de utilities ao Tax One - tabelas SAFX3042 e SAFX3043 disponíveis no pacote standard, com capa e itens prontos para integração.",
+      "- Registre IBS e CBS corretamente nos documentos de utilities - os novos campos tributários (Grupo UB, Grupo W03, cClassTrib) são suportados conforme as Notas Técnicas da SEFAZ e do Comitê Gestor do IBS.",
+      "- Controle tributos antigos e novos simultaneamente - suporte à coexistência de ICMS, PIS e COFINS com IBS e CBS nos documentos de utilities durante o período de transição (2026–2032)."
+     ],
+     "status": "entregue",
+     "when": "jun",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ],
+   "Q3": [
+    {
+     "title": "Oracle EBS V11",
+     "lead": "| Sem ODI: Adeque as Notas Fiscais de Entradas e Saídas à Reforma Tributária",
+     "body": [
+      "- Aproveite integralmente os créditos de IBS e CBS - os novos campos tributários são registrados corretamente nas notas de entrada (SAFX 3007, 3008 e 3009), garantindo que nenhum crédito seja perdido.",
+      "- Elimine inconsistências com o fisco - leiaute de recebimento atualizado conforme as especificações da Nota Técnica 2025.002 e as exigências da SEFAZ.",
+      "- Controle tributos antigos e novos simultaneamente - suporte à coexistência de ICMS, PIS e COFINS com IBS e CBS durante o período de transição (2026–2032).",
+      "- Receba notas fiscais do novo modelo tributário sem intervenção manual - notas emitidas por fornecedores no novo leiaute são processadas e registradas automaticamente."
+     ],
+     "status": "entregue",
+     "when": "jul",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    },
+    {
+     "title": "Oracle EBS V11",
+     "lead": "| Sem ODI: Adeque os documentos fiscais de utilities à Reforma Tributária",
+     "body": [
+      "- Integre documentos fiscais de utilities ao Tax One - tabelas SAFX3042 e SAFX3043 disponíveis no pacote standard, com capa e itens prontos para integração.",
+      "- Registre IBS e CBS corretamente nos documentos de utilities - os novos campos tributários (Grupo UB, Grupo W03, cClassTrib) são suportados conforme as Notas Técnicas da SEFAZ e do Comitê Gestor do IBS.",
+      "- Controle tributos antigos e novos simultaneamente - suporte à coexistência de ICMS, PIS e COFINS com IBS e CBS nos documentos de utilities durante o período de transição (2026–2032)."
+     ],
+     "status": "entregue",
+     "when": "set",
+     "mixed": false,
+     "themes": [
+      "CBS",
+      "IBS"
+     ]
+    }
+   ],
+   "Q4": [
+    {
+     "title": "Oracle Cloud V17 | Oracle EBS V11 | OBTI",
+     "lead": "",
+     "body": [
+      "Adequações das Atualizações Legais realizadas pelos produtos ONESOURCE Tax One e ONESOURCE DFE."
+     ],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": []
+    },
+    {
+     "title": "Oracle EBS V11",
+     "lead": "| Liberação das tabelas SAFX3042 e SAFX3043.",
+     "body": [],
+     "status": "previsto",
+     "when": "out",
+     "mixed": false,
+     "themes": []
+    }
+   ]
+  }
+ }
+]
